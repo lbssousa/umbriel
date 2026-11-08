@@ -325,6 +325,9 @@ namespace umbriel {
       if (rule.defaultFullscreen) {
         resolved.defaultFullscreen = rule.defaultFullscreen;
       }
+      if (rule.defaultWindowedFullscreen) {
+        resolved.defaultWindowedFullscreen = rule.defaultWindowedFullscreen;
+      }
       if (rule.defaultMaximizeToEdges) {
         resolved.defaultMaximizeToEdges = rule.defaultMaximizeToEdges;
       }

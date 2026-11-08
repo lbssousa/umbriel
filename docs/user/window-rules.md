@@ -49,6 +49,7 @@ State selectors update while the window is open. Opening settings are resolved b
 | `default_workspace`              | Open on a one-based position or exact workspace name.                                                           |
 | `default_scratchpad`             | Store in the implicit or a configured scratchpad.                                                               |
 | `default_fullscreen`             | Open fullscreen.                                                                                                |
+| `default_windowed_fullscreen`    | Open told it is fullscreen while keeping its tile, like [`window-toggle-windowed-fullscreen`](actions.md#windows). `default_fullscreen` wins. |
 | `default_floating`               | Force floating or tiling.                                                                                       |
 | `default_maximize`               | Open maximized within normal layout bounds.                                                                     |
 | `default_maximize_to_edges`      | Open maximized without gaps, struts, or borders.                                                                |

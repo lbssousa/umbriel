@@ -471,6 +471,14 @@ namespace umbriel {
     if (placed && rule.defaultFullscreen && *rule.defaultFullscreen) {
       setFullscreen(true);
     }
+    // Real fullscreen, from a rule or the client, wins over windowed fullscreen.
+    if (placed
+        && rule.defaultWindowedFullscreen
+        && *rule.defaultWindowedFullscreen
+        && !scheduledFullscreen()
+        && !m_windowedFullscreen) {
+      setWindowedFullscreen(true);
+    }
 
     if (placed) {
       settleOpeningAloneState();
@@ -971,6 +979,13 @@ namespace umbriel {
       const bool tiledEdges = wantTiled || config().appearance.preferNoCsd;
       setTiledState(tiledEdges ? WLR_EDGE_TOP | WLR_EDGE_RIGHT | WLR_EDGE_BOTTOM | WLR_EDGE_LEFT : 0);
 
+      // The first buffer already draws the fullscreen interface; the box stays the tile's or floating one.
+      if (!wantFullscreen
+          && !openingInScratchpad
+          && rule.defaultWindowedFullscreen
+          && *rule.defaultWindowedFullscreen) {
+        setWindowedFullscreen(true);
+      }
       if (wantFullscreen) {
         // An X11 client can request fullscreen before its first buffer. The request event is too early to configure,
         // but the role preserves it in requested state for us to honor now.

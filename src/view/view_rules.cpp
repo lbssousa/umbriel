@@ -538,6 +538,16 @@ namespace umbriel {
 
     if (!inScratchpad
         && unseenInitialRuleValue(
+            rule.defaultWindowedFullscreen, m_initialRuleHistory, &ResolvedWindowRule::defaultWindowedFullscreen
+        )
+        && *rule.defaultWindowedFullscreen
+        && !scheduledFullscreen()
+        && !m_windowedFullscreen) {
+      setWindowedFullscreen(true);
+    }
+
+    if (!inScratchpad
+        && unseenInitialRuleValue(
             rule.defaultMaximizeToEdges, m_initialRuleHistory, &ResolvedWindowRule::defaultMaximizeToEdges
         )
         && *rule.defaultMaximizeToEdges
