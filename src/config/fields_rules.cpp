@@ -229,6 +229,7 @@ namespace umbriel {
           ),
           boolean("default_floating", &W::defaultFloating),
           boolean("default_fullscreen", &W::defaultFullscreen),
+          boolean("default_windowed_fullscreen", &W::defaultWindowedFullscreen),
           boolean("default_maximize_to_edges", &W::defaultMaximizeToEdges),
           boolean("default_maximize", &W::defaultMaximize),
           boolean("default_focused", &W::defaultFocused),
