@@ -477,6 +477,7 @@ namespace umbriel {
     std::optional<int> defaultScrollingColumnOrder;
     std::optional<ColumnDisplay> defaultColumnDisplay;
     std::optional<bool> defaultFullscreen;
+    std::optional<bool> defaultWindowedFullscreen;
     std::optional<bool> defaultMaximizeToEdges;
     std::optional<bool> defaultMaximize;
     std::optional<bool> defaultFocused;
@@ -553,6 +554,7 @@ namespace umbriel {
           && defaultScrollingColumnOrder == other.defaultScrollingColumnOrder
           && defaultColumnDisplay == other.defaultColumnDisplay
           && defaultFullscreen == other.defaultFullscreen
+          && defaultWindowedFullscreen == other.defaultWindowedFullscreen
           && defaultMaximizeToEdges == other.defaultMaximizeToEdges
           && defaultMaximize == other.defaultMaximize
           && defaultFocused == other.defaultFocused
@@ -604,6 +606,7 @@ namespace umbriel {
     std::optional<int> defaultScrollingColumnOrder;
     std::optional<ColumnDisplay> defaultColumnDisplay;
     std::optional<bool> defaultFullscreen;
+    std::optional<bool> defaultWindowedFullscreen;
     std::optional<bool> defaultMaximizeToEdges;
     std::optional<bool> defaultMaximize;
     std::optional<bool> defaultFocused;
